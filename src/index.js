@@ -1,12 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import styled from 'styled-components';
+import Input from './components/Input/Input';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+const App = styled.div`
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  @media only screen and (min-width: 768px) {
+      flex-direction: row;
+    }
+`;
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App>
+      <Input placeholder={"Email"}/>
+    </App>
+      
   </React.StrictMode>,
   document.getElementById('root')
 );
