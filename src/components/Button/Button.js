@@ -1,17 +1,21 @@
 import styled from 'styled-components';
 
 const Button = styled.button`
-    width: fit-content;
-    height: fit-content;
-    max-width: 50%;
-    background-color: ${props => props.primary ? "#2f0601" : "#ffd3ba"};
-    color: ${props => props.primary ? "#ffd3ba" : "#000"};
-    font-size: 1em;
-    margin: 1em;
+    width: ${props => props.width ? props.width : 'fit-content'};
+    max-width: 400px;
+    height: 56px;
+    margin: 5px;
     padding: 0.25em 1em;
-    border: 2px solid black;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.3);
+    font-size: 1.5em;
+    font-weight: 600;
+    background-color: ${props => props.primary ? "rgba(247,159,121,1)" : "rgba(110, 37, 148,1)" };
+    color: ${props => props.primary ? "rgba(0, 0, 0,1)" : "rgba(255,255,255,1)"};
+    border: 2px solid rgba(75,40,64,0.5);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
     border-radius: 12px;
+    transition: 0.3s all;
+    outline: none;
+    font-family: 'Montserrat', sans-serif;
     cursor: pointer;
 `;
 

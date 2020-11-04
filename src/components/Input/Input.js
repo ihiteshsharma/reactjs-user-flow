@@ -3,25 +3,23 @@ import styled from 'styled-components';
 
 
 const InputWrapper = styled.div`
-    width: 60vw;
-    max-width: 400px;
+    width: ${props => props.width ? props.width : 'auto'};
     height: 56px;
-    border-radius: 12px;
+    border-radius: 8px;
     padding: 0 1em;
     font-size: 1.5em;
     position: relative;
     background-color: rgba(255,255,255,0.5);
     transition: 0.3s all;
     outline: none;
+    margin: 2% 1%;
     pointer-events: ${props => props.locked ? `none` : null};
 
-    :hover{
+    &:hover{
         background-color: rgba(255,255,255,0.7);
         box-shadow: 0px 4px 20px 0px rgba(0,0,0,0.5);
     }
-    :active{
-        background-color: "#fff";
-    }
+    
 `;
 
 const InputComponent = styled.input`
@@ -41,6 +39,7 @@ const InputComponent = styled.input`
     box-shadow: 0px 4px 20px 0px transparent;
     transition: 0.3s background-color ease-in-out, 0.3s box-shadow ease-in-out,
         0.1s padding ease-in-out;
+    
 `;
 const Input = (props) => {
     return(

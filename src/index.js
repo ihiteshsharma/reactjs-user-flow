@@ -1,29 +1,42 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import styled from 'styled-components';
-import Input from './components/Input/Input';
-import './index.css';
 import reportWebVitals from './reportWebVitals';
 
-const App = styled.div`
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
+import { createGlobalStyle } from 'styled-components';
 
-  @media only screen and (min-width: 768px) {
-      flex-direction: row;
+import App from './containers/App/App'
+import Header from './components/Header/Header';
+import Profile from './containers/Profile/Profile';
+
+const GlobalStyle = createGlobalStyle`
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Montserrat','Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      height: auto;
+      background-color: #1d7874;
+    }
+
+    code {
+      font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
     }
 `;
 
 ReactDOM.render(
   <React.StrictMode>
-    <App>
-      <Input placeholder={"Email"}/>
-    </App>
-      
+    <GlobalStyle />
+      <App>
+        <Header>WELCOME</Header>
+        <Profile />
+      </App>
   </React.StrictMode>,
   document.getElementById('root')
 );
