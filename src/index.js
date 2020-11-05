@@ -4,9 +4,7 @@ import reportWebVitals from './reportWebVitals';
 
 import { createGlobalStyle } from 'styled-components';
 
-import App from './containers/App/App'
-import Header from './components/Header/Header';
-import Profile from './containers/Profile/Profile';
+import App from './containers/App/App';
 
 const GlobalStyle = createGlobalStyle`
     * {
@@ -33,11 +31,8 @@ const GlobalStyle = createGlobalStyle`
 ReactDOM.render(
   <React.StrictMode>
     <GlobalStyle />
-      <App>
-        <Header>WELCOME</Header>
-        <Profile />
-      </App>
-  </React.StrictMode>,
+      <App />
+    </React.StrictMode>,
   document.getElementById('root')
 );
 

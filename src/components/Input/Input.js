@@ -43,7 +43,7 @@ const InputComponent = styled.input`
 `;
 const Input = (props) => {
     return(
-        <InputWrapper {...props}>
+        <InputWrapper width={props.width}>
             <InputComponent {...props}/>
         </InputWrapper>
     )

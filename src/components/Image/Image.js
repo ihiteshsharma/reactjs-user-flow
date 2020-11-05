@@ -24,8 +24,8 @@ const Image = styled.img`
 
 const Img = (props) => {
     return(
-        <ImageWrapper {...props}>
-            <Image rounded={props.rounded} {...props}/>
+        <ImageWrapper width={props.width} height={props.height} rounded={props.rounded}>
+            <Image {...props}/>
         </ImageWrapper>
     )
 }

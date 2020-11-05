@@ -1,6 +1,9 @@
+import React from 'react'
 import styled from 'styled-components';
+import Header from '../../components/Header/Header';
+import LoginForm from '../LoginForm/LoginForm';
 
-const App = styled.div`
+const AppWrapper = styled.div`
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -12,6 +15,16 @@ const App = styled.div`
       flex-direction: row;
     }
 `;
+
+const App = (props) => {
+  
+  return(
+    <AppWrapper>
+      <Header>WELCOME</Header>
+      <LoginForm />
+    </AppWrapper>
+  )
+}
 
 
 export default App;
