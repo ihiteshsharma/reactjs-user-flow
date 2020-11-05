@@ -14,8 +14,8 @@ const SignupForm = () => {
         <Form buttonLabel="Signup" linkBelowFormText="Already have an account? Login">
             <Input placeholder={"Username"} />
             <RowWrapper>
-                <Input placeholder={"First Name"} width="30vw"/>
-                <Input placeholder={"Last Name"} width="30vw"/>
+                <Input placeholder={"First Name"} />
+                <Input placeholder={"Last Name"} />
             </RowWrapper>
             <Input placeholder={"Email"} type="email" />
             <Input placeholder={"Phone"} />

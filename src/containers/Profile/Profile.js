@@ -31,7 +31,7 @@ const Profile = () => {
         <div>
             <Card>
                 <RowWrapper>
-                    <Img rounded src="https://scontent.fpnq7-1.fna.fbcdn.net/v/t1.0-9/123399127_850499442423793_1811213071073553177_o.jpg?_nc_cat=101&ccb=2&_nc_sid=09cbfe&_nc_ohc=OljyRpTMfR8AX_4dH8k&_nc_ht=scontent.fpnq7-1.fna&oh=0cd5cc375a436b322ced72b8a4f3f39b&oe=5FC6A293"/>
+                    <Img rounded src="https://via.placeholder.com/150" />
                     <div>
                         <TextWrapper>Name : Hitesh Sharma</TextWrapper>
                         <TextWrapper>Username : @hiteshsharma</TextWrapper>

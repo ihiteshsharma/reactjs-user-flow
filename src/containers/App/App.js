@@ -2,6 +2,9 @@ import React from 'react'
 import styled from 'styled-components';
 import Header from '../../components/Header/Header';
 import LoginForm from '../LoginForm/LoginForm';
+import SignupForm from '../SignupForm/SignupForm';
+import Profile from '../Profile/Profile';
+import { Route, Switch } from 'react-router-dom';
 
 const AppWrapper = styled.div`
   width: 100vw;
@@ -9,7 +12,7 @@ const AppWrapper = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
 
   @media only screen and (min-width: 768px) {
       flex-direction: row;
@@ -21,7 +24,11 @@ const App = (props) => {
   return(
     <AppWrapper>
       <Header>WELCOME</Header>
-      <LoginForm />
+      <Switch>
+        <Route exact path='/login' component={LoginForm}/>
+        <Route exact path='/signup' component={SignupForm}/>
+        <Route exact path='/profile' component={Profile}/>
+      </Switch>
     </AppWrapper>
   )
 }
