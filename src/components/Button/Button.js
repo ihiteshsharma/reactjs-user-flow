@@ -1,22 +1,55 @@
-import styled from 'styled-components';
+import React from 'react'
+import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSpinner,faInfoCircle,faTimesCircle,faCheckCircle, faExclamationCircle } from '@fortawesome/free-solid-svg-icons';
 
-const Button = styled.button`
-    width: ${props => props.width ? props.width : 'fit-content'};
-    max-width: 400px;
-    height: 56px;
-    margin: 5px;
-    padding: 0.25em 1em;
-    font-size: 1.5em;
-    font-weight: 600;
-    background-color: ${props => props.primary ? "rgba(247,159,121,1)" : "rgba(110, 37, 148,1)" };
-    color: ${props => props.primary ? "rgba(0, 0, 0,1)" : "rgba(255,255,255,1)"};
-    border: 2px solid rgba(75,40,64,0.5);
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
-    border-radius: 12px;
-    transition: 0.3s all;
-    outline: none;
-    font-family: 'Montserrat', sans-serif;
-    cursor: pointer;
-`;
+import './Button.css'
 
-export default Button;
+const showIcon = (mode) => {
+    switch(mode){
+        case 'info':
+            return <FontAwesomeIcon icon={faInfoCircle} className={`button--icon`} />
+        case 'error':
+            return <FontAwesomeIcon icon={faTimesCircle} className={`button--icon`} />
+        case 'warning':
+            return <FontAwesomeIcon icon={faExclamationCircle} className={`button--icon`} />
+        case 'success':
+            return <FontAwesomeIcon icon={faCheckCircle} className={`button--icon`} />
+        default:
+            return null;
+    }
+}
+
+export const Button = ({ mode, size, style, label, loading, ...props }) => {
+    return(
+        <>
+        <button
+        type="button"
+        disabled={loading}
+        className={[`button`, `button--${size}`, `button--${mode}`].join('  ')}
+        style={style && { ...style }}
+        {...props}>
+            {showIcon(mode)}
+            {loading ? <FontAwesomeIcon icon={faSpinner} spin className={`button--icon`} /> : null}
+            {label}
+        </button>
+        </>
+    )
+}
+
+Button.propTypes = {
+    mode: PropTypes.oneOf(['primary','secondary','error','warning','info','success']),
+    size: PropTypes.oneOf(['small','medium','large']),
+    label: PropTypes.string.isRequired,
+    loading: PropTypes.bool,
+    style: PropTypes.object,
+    onClick: PropTypes.func
+}
+
+Button.defaultProps = {
+    mode: 'primary',
+    size: 'medium',
+    loading: false,
+    style: undefined,
+    onClick: undefined,
+}

@@ -1,17 +1,31 @@
 import React from 'react';
-import Input from '../../components/Input/Input';
-import Form from '../../components/Form/Form';
+import { Button } from '../../components/Button/Button';
+import { Input } from '../../components/Input/Input';
+import { useInput } from '../../hooks/useInput';
 
-// import { config } from '../../_helpers/Constants';
+export const LoginForm = () => {
+    const [usernameProps,resetUsername] = useInput("");
+    const [passwordProps,resetPassword] = useInput("");
 
-const LoginForm = (props) => {
+    const submit = event => {
+        event.preventDefault();
+        //usernameProps.value has username
+        //passwordProps.value has password
 
+        //call LoginService here with username, password
+        
+        resetUsername();
+        resetPassword();
+    }
     return(
-        <Form buttonLabel="Login" linkBelowFormText="Don't have an account? Signup">
-            <Input placeholder={"Username or Email"}/>
-            <Input placeholder={"Password"} type="password" />
-        </Form>
-    );
+        <form onSubmit={submit}>
+            <Input
+            {...usernameProps}
+            placeholder="Username" />
+            <Input
+            {...passwordProps}
+            placeholder="Password" type="password" />
+            <Button label="Login" type="submit"/>
+        </form>
+    )
 };
-
-export default LoginForm;

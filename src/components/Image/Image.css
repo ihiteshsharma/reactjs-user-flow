@@ -1,0 +1,30 @@
+.image {
+    transition: filter 1s ease-in-out;
+    transform-origin: center center;
+    filter: brightness(70%);
+    border: 1px solid #000;
+}
+
+.image:hover {
+    filter: brightness(100%);
+}
+
+.image--small {
+    width: 5em;
+    height: 5em;
+}
+
+.image--medium {
+    width: 7em;
+    height: 7em;
+}
+
+.image--large {
+    width: 10em;
+    height: 10em;
+}
+
+.image--rounded {
+    border: none;
+    border-radius: 50%;
+}

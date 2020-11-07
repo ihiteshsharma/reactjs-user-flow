@@ -7,7 +7,7 @@ const HeaderWrapper = styled.div`
     font-size: 2rem;
     font-weight: 700;
     margin: 5%;
-    color: #FFFFFF;
+    color: #000;
 `;
 
 const Header = (props) => {

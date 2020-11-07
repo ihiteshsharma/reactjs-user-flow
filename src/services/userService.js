@@ -1,6 +1,16 @@
 
 class userService {
-    
+    login = ({ username, password }) => {
+
+    }
+
+    signup = (user) => {
+
+    }
+
+    update = (id, user) => {
+
+    }
 }
 
 

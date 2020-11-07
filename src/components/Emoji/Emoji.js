@@ -1,4 +1,6 @@
 import React from 'react';
+import './Emoji.css';
+
 const Emoji = props => (
     <span
         className="emoji"

@@ -1,0 +1,73 @@
+.button {
+    padding: 0.5em 1em;
+    margin: 0.5em 0;
+    font-weight: 600;
+    border: 0;
+    border-radius: 2em;
+    transition: 0.3s all;
+    outline: none;
+    font-family: 'Helvetica Neue', sans-serif;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0, 0.4);
+}
+
+.button--small {
+    font-size: 0.8em;
+}
+
+.button--medium {
+    font-size: 1em;
+}
+
+.button--large {
+    font-size: 1.2em;
+}
+
+.button--icon {
+    margin-right: 0.5em;
+}
+
+.button--primary {
+    background-color: rgba(11, 57, 72, 1);
+    color: #FFF;
+
+}
+
+.button--secondary {
+    background-color: rgba(244, 244, 226, 1);
+    color: rgba(11, 57, 72, 1);;
+    border: 1px solid rgba(11, 57, 72, 1);;
+}
+
+.button--error {
+    background-color: rgb(154, 3, 30);
+    color: #fff;
+}
+
+.button--warning {
+    background-color: rgb(251, 139, 36);
+    color: #000;
+}
+
+.button--info {
+    background-color: rgb(63, 136, 197);
+    color: #fff;
+}
+
+.button--success {
+    background-color: rgb(101, 155, 94);
+    color: #fff;
+}
+
+
+.button:disabled {
+    background-color:rgb(119,136,153);
+    color: rgba(255,255,255,1);
+    cursor: progress;
+}
+
+.button--error--message {
+    color: rgb(154, 3, 30);
+    font-size: large;
+    font-weight: 600;
+}

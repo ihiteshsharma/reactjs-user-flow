@@ -1,8 +1,8 @@
 import React from 'react'
-import Img from '../../components/Image/Image';
+import { Image } from '../../components/Image/Image';
 import Card from '../../components/Card/Card';
 import styled from 'styled-components';
-import Button from '../../components/Button/Button';
+import { Button } from '../../components/Button/Button';
 
 const RowWrapper = styled.div`
     display: flex;
@@ -31,7 +31,7 @@ const Profile = () => {
         <div>
             <Card>
                 <RowWrapper>
-                    <Img rounded src="https://via.placeholder.com/150" />
+                    <Image rounded src="https://via.placeholder.com/150" />
                     <div>
                         <TextWrapper>Name : Hitesh Sharma</TextWrapper>
                         <TextWrapper>Username : @hiteshsharma</TextWrapper>
