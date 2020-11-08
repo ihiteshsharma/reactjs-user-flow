@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Input.css';
 
-export const Input = ({ type, placeholder, style, error, ...props }) => {
+export const Input = ({ type, placeholder, style, ...props }) => {
     return(
         <div className={`input--wrapper`}>
             <input className={`input`}
@@ -10,7 +10,6 @@ export const Input = ({ type, placeholder, style, error, ...props }) => {
             type={type}
             style={style && { ...style }}
             {...props} />
-            <span className={`input--errortext`}>{error}</span>
         </div>
     )
 }
@@ -18,13 +17,11 @@ export const Input = ({ type, placeholder, style, error, ...props }) => {
 Input.propTypes = {
     type: PropTypes.string.isRequired,
     style: PropTypes.object,
-    error: PropTypes.string,
     placeholder: PropTypes.string
 }
 
 Input.defaultProps = {
     type: 'text',
     placeholder: undefined,
-    error: undefined,
     style: undefined
 }

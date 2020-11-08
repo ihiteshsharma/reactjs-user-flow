@@ -7,7 +7,7 @@ import Profile from '../Profile/Profile';
 import { Route, Switch } from 'react-router-dom';
 
 const AppWrapper = styled.div`
-  width: 50vw;
+  width: 100vw;
   height: 100vh;
   display: flex;
   align-items: center;

@@ -1,0 +1,12 @@
+.separator {
+    width: 0.2em;
+    height: 30vh;
+    margin: 0 2em;
+    background-color: #000;
+}
+
+.login--errortext {
+    color: rgb(154, 3, 30);
+    font-size: small;
+    font-weight: 600;
+}

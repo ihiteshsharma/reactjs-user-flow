@@ -28,6 +28,8 @@ const SignupForm = () => {
         resetImage();
     }
     return(
+        <>
+        <div className={`separator`}></div>
         <form onSubmit={submit}>
             <Input
             {...imageProps}
@@ -53,6 +55,7 @@ const SignupForm = () => {
             placeholder="Password" type="password" />
             <Button label="Sign Up" type="submit"/>
         </form>
+        </>
     )
 }
 
