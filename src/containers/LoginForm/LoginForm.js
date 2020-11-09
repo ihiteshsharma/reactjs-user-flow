@@ -39,7 +39,6 @@ export const LoginForm = () => {
     }
     return(
         <>
-        <div className={`separator`}></div>
         <form onSubmit={submit}>
             <span className={`login--errortext`}>{error}</span>
             <Input

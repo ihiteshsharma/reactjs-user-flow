@@ -4,7 +4,7 @@ import './Input.css';
 
 export const Input = ({ type, placeholder, style, ...props }) => {
     return(
-        <div className={`input--wrapper`}>
+        <div>
             <input className={`input`}
             placeholder={placeholder}
             type={type}

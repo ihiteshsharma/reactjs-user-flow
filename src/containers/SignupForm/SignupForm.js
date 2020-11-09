@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Input } from '../../components/Input/Input';
 import { Button } from '../../components/Button/Button';
 import { useInput } from '../../hooks/useInput';
+import { useLocalStorage } from '../../hooks/useLocalStorage';
+import './SignupForm.css';
+import userService from '../../services/userService';
 
 const SignupForm = () => {
     const [usernameProps,resetUsername] = useInput("");
@@ -10,31 +13,36 @@ const SignupForm = () => {
     const [lastNameProps, resetLastName] = useInput("");
     const [emailProps, resetEmail] = useInput("");
     const [phoneNumberProps, resetPhoneNumber] = useInput("");
-    const [imageProps, resetImage] = useInput("");
+    const [confirmPassProps, resetConfirmPass] = useInput("");
+    const [loading,setLoading] = useState(false);
+    const [error, setError] = useState("");
+    const [token,setToken] = useLocalStorage("", "token");
+
 
     const submit = event => {
         event.preventDefault();
-        //usernameProps.value has username
-        //passwordProps.value has password
+        //xxxProps.value has that fields value
+        setLoading(true);
 
-        //call LoginService here with username, password
+        //call Signup Service here with the user object
+        let user = {
+            username: usernameProps.value,
+            password: passwordProps.value
+        }
+        userService.signup()
         
+        //reset fields when done
         resetUsername();
         resetPassword();
         resetFirstName();
         resetLastName();
         resetEmail();
         resetPhoneNumber();
-        resetImage();
+        resetConfirmPass();
     }
     return(
         <>
-        <div className={`separator`}></div>
-        <form onSubmit={submit}>
-            <Input
-            {...imageProps}
-            placeholder="Image" type="file"/>
-            
+        <form onSubmit={submit} className="form--wrapper" >        
             <Input
             {...usernameProps}
             placeholder="Username" error="Username not defined"/>
@@ -53,6 +61,9 @@ const SignupForm = () => {
             <Input
             {...passwordProps}
             placeholder="Password" type="password" />
+            <Input
+            {...confirmPassProps}
+            placeholder="Confirm Password" type="password" />
             <Button label="Sign Up" type="submit"/>
         </form>
         </>

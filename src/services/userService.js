@@ -9,13 +9,21 @@ class userService {
             method: 'POST',
             url,
             data: body,
-            headers: { 'Content-Type': 'application/json',"Access-Control-Allow-Origin": "*" },
+            headers: { 'Content-Type': 'application/json' },
         }
         return await axios(params);
     }
 
-    signup = (user) => {
-
+    signup = async (user) => {
+        const url = config.url.API_URL + '/users/signup';
+        const body = JSON.stringify(user);
+        const params = {
+            method: 'POST',
+            url,
+            data: body,
+            headers: { 'Content-Type': 'application/json' },
+        }
+        return await axios(params);
     }
 
     update = (id, user) => {
